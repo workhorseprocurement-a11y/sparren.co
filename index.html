@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sparren — Coming soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --slate: #272B30;
+    --slate-deep: #1E2125;
+    --copper: #B87333;
+    --navajo: #FAEBD7;
+    --text-secondary-on-slate: #C8BFB4;
+    --weight-regular: 400;
+    --weight-medium: 500;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+    background:
+      radial-gradient(circle at 50% 32%, var(--slate) 0%, var(--slate-deep) 100%);
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    font-weight: var(--weight-regular);
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    animation: rise 0.7s ease-out 0.1s forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stack { opacity: 1; animation: none; }
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .wordmark {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: var(--weight-regular);
+    font-size: 40px;
+    line-height: 1.0;
+    letter-spacing: 0.04em;
+    color: var(--navajo);
+    margin: 0 0 22px;
+  }
+
+  .mark {
+    width: 64px;
+    height: auto;
+    color: var(--copper);
+    margin-bottom: 22px;
+  }
+
+  .status {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: var(--weight-medium);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary-on-slate);
+    margin: 0;
+  }
+
+  @media (max-width: 420px) {
+    .wordmark { font-size: 32px; margin-bottom: 18px; }
+    .mark { width: 52px; margin-bottom: 18px; }
+  }
+</style>
+</head>
+<body>
+  <div class="stack">
+    <h1 class="wordmark">Sparren</h1>
+    <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 38" role="img" aria-label="Sparren mark">
+      <line x1="13.04" y1="33.06" x2="86.96" y2="33.06"
+            stroke="currentColor" stroke-opacity="0.63" stroke-width="1"/>
+      <polyline points="8,27.08 33.2,11.4 66.8,11.4 92,27.08"
+            fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <p class="status">Coming soon</p>
+  </div>
+</body>
+</html>
